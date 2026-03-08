@@ -155,30 +155,17 @@ let touchendX = 0;
 let touchendY = 0;
 
 // Registra dove inizia il tocco
-// Registra dove inizia il tocco
 document.addEventListener('touchstart', e => {
-    // Impedisce lo scroll o il refresh trascinando verso il basso
-    if (e.target.id === "snakeGame") {
-        e.preventDefault();
-    }
     touchstartX = e.changedTouches[0].screenX;
     touchstartY = e.changedTouches[0].screenY;
-}, { passive: false }); // 'passive: false' è necessario per permettere preventDefault
+}, false);
 
-// Registra dove finisce il tocco
+// Registra dove finisce il tocco e calcola la direzione
 document.addEventListener('touchend', e => {
-    if (e.target.id === "snakeGame") {
-        e.preventDefault();
-    }
     touchendX = e.changedTouches[0].screenX;
     touchendY = e.changedTouches[0].screenY;
     handleGesture();
-}, { passive: false });
-
-// Aggiungi anche questo per sicurezza durante il movimento
-document.addEventListener('touchmove', e => {
-    e.preventDefault();
-}, { passive: false });
+}, false);
 
 function handleGesture() {
     const deltax = touchendX - touchstartX;
@@ -199,5 +186,7 @@ function handleGesture() {
     if (Math.abs(deltax) < 10 && Math.abs(deltay) < 10) {
         if (introScreen.style.display === "none") togglePause();
     }
+}
 
 }
+
