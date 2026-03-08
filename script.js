@@ -187,6 +187,3 @@ function handleGesture() {
         if (introScreen.style.display === "none") togglePause();
     }
 }
-
-}
-
