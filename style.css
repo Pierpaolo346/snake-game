@@ -7,8 +7,12 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    overflow: hidden; /* Per prevenire lo scroll se l'intro e il gioco si sovrappongono brevemente */
-
+    
+    /* AGGIUNTE PER MOBILE */
+    overflow: hidden; 
+    position: fixed; /* Blocca la pagina per evitare rimbalzi su iOS/Android */
+    width: 100%;
+    touch-action: none; /* Disabilita i gesti predefiniti del browser come lo scroll */
 }
 
 /* Stili per l'introduzione */
@@ -94,6 +98,14 @@ canvas {
     border: 5px solid #ecf0f1;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
     background-color: #000;
+    
+    /* AGGIUNTE PER MOBILE */
+    display: block;
+    max-width: 90vw; /* Si adatta alla larghezza dello schermo del telefono */
+    max-height: 70vh; /* Evita che il canvas sia troppo alto per schermi piccoli */
+    touch-action: none; 
+    user-select: none; 
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 #score {
@@ -117,3 +129,4 @@ p {
 b {
     color: #2ecc71; /* Evidenzia i tasti in verde come il serpente */
 }
+
