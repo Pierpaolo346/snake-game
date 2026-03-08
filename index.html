@@ -2,38 +2,30 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake JS Edition</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
-
     <div id="introScreen">
         <h1 class="intro-title">Snake Game</h1>
         <div class="loading-bar"></div>
     </div>
 
     <div class="game-container hidden"> 
-        <div id="logo-container">
-            <img src="logo.png" alt="Logo" class="header-logo">
-        </div>
-        
+        <h1>Snake Game</h1>
         <div id="score">Punteggio: 0</div>
         <div id="highScore">Record: 0</div> 
         
         <canvas id="snakeGame" width="400" height="400"></canvas>
+        
         <p>Usa le <b>Frecce</b> per muoverti | <b>Spazio</b> per Pausa</p>
-    </div>
-
-    <div id="gameOverScreen" class="hidden">
-        <h2>GAME OVER</h2>
-        <p id="finalScore">Punteggio: 0</p>
-        <button onclick="restartGame()">Riprova</button>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-</html>
+
 
 
